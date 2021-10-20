@@ -1,0 +1,18 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "extendscript-debug",
+            "request": "launch",
+            "name": "JSX",
+            "program": "${workspaceFolder}/jsx/black8_Icon.jsx",//根目录
+            //"program": "${workspaceFolder}/jsx/PsdToEUI/PsdToEUI.jsx",//EUI
+            //"program": "${workspaceFolder}/jsx/cleanMetaData/main_one.jsx",//清理原始数据
+             "stopOnEntry": false
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<ExtensionList>
+    <Extension Id="Black8Tool_icon">
+        <HostList>
+          
+            <!-- Photoshop -->
+            <Host Name="PHXS" Port="8998"/>
+            
+            <!-- InDesign -->
+            <Host Name="IDSN" Port="8090" />
+                       
+        </HostList>
+    </Extension>
+</ExtensionList>
+ 
