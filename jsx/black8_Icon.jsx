@@ -7,10 +7,10 @@
  * @date 2021-05-09 完善类型(右上角标)
  * @date 2021-05-13 修改品质BUG qua undefined
  */
-/*
+
 $.evalFile(File($.fileName).parent + "/lib/json2.jsx");
 $.evalFile(File($.fileName).parent + "/lib/kersBoru_lib.jsx");
-var excelFile = new File("D:/Black8/72bian/svn/ui/upload/T图标/配置表/武将卡.json");
+var excelFile = new File("D:/Black8/72bian/svn/ui/upload/T图标/配置表/武将卡_道果.json");
 main(excelFile, projectName("72bian"));
 try {
     JSON
@@ -36,7 +36,7 @@ function projectName(name) {
     return project;
 
 }
-*/
+
 function main(excelFile, projectData) {
 
     //alert("01:  " + nameTypeVal);
@@ -65,6 +65,7 @@ function main(excelFile, projectData) {
                 var qua = line.qua;//品质框
                 var imgName = line.imgName;//图片名字
                 var isExport = line.isExport;//是否需要导出
+                var dao = line.dao;//道果等级
 
                 //quality(qua);
                 var imgFullName = pat + img + ".png"
@@ -80,7 +81,7 @@ function main(excelFile, projectData) {
                         //smartObjectOptions().putPath(charIDToTypeID("null"), imgFullName);
 
                         //修改psd文件
-                        modifyPSDcontent(tag, tagR, lv, imgFullName, qua, libPath);
+                        modifyPSDcontent(tag, tagR, lv, imgFullName, qua, libPath,dao);
                         //保存图片
                         saveImg(pat, type, imgName);
 
@@ -108,7 +109,7 @@ function main(excelFile, projectData) {
  * @param imgFullName 图标资源路径
  * @param qua 品质框
  */
-function modifyPSDcontent(tag, tagR, lv, imgFullName, qua, libPath) {
+function modifyPSDcontent(tag, tagR, lv, imgFullName, qua, libPath,dao) {
 
     var doc = app.activeDocument;
 
@@ -117,13 +118,14 @@ function modifyPSDcontent(tag, tagR, lv, imgFullName, qua, libPath) {
 
     //var pat = projectData.psd;//后续需要改成配置的
     //var pat = "//版本公用计算机/美术资源共享文件夹1/天天幻灵美术/百将诀/lib/原始文件/";//百将诀
- 
+
 
     var tagFullName = libPath + "阵营/" + tag + ".psd";
     //var tagFullName = pat + "神兵角标_" + tag + ".psd";
     var tagR_FullName = libPath + "图标相关/" + tagR + ".psd";
     var lvFullName = libPath + "星星/" + lv + ".psd";
     var quaFullName = libPath + "道具品质/" + qua + ".psd";
+    var daoFullName = libPath + "星星/" + dao + ".psd";
 
     for (var i = 0; i < layers.length; i++) {//遍历图层
 
@@ -180,6 +182,19 @@ function modifyPSDcontent(tag, tagR, lv, imgFullName, qua, libPath) {
 
 
                 break;
+            case "道果": //替换 道果
+
+                if (dao != "无") {
+                    layer.visible = true;
+                    activeDocument.activeLayer = layer;
+                    kersBoru.listenerType.placedLayerReplaceContents(daoFullName);
+
+                } else {
+                    layer.visible = false;
+                }
+
+
+                break;
             case "品质": //替换 品质框
                 if (qua != "无") {
                     layer.visible = true;
@@ -219,8 +234,8 @@ function saveImg(pat, type, imgName) {
     var outfile = new File(decodeURI(path + "/") + imgName + ".png"); //保存图片到
     //alert("这里是outfile   "+outfile);
     doc.exportDocument(outfile, ExportType.SAVEFORWEB, saveOption);
-    
-    
+
+
 
     //alert("这里是000000000000000   ");
 }
