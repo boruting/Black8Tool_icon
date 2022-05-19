@@ -10,32 +10,32 @@
 
 $.evalFile(File($.fileName).parent + "/lib/json2.jsx");
 $.evalFile(File($.fileName).parent + "/lib/kersBoru_lib.jsx");
-var excelFile = new File("D:/Black8/72bian/svn/ui/upload/T图标/配置表/武将卡_道果.json");
-main(excelFile, projectName("72bian"));
+// var excelFile = new File("D:/Black8/bjj/svn/ui/upload/T图标/配置表/武将道具_道果.json");
+// main(excelFile, projectName("bjj"));
 try {
     JSON
 } catch (e) {
     $.writeln("1因为未载入 JSON 解析库，请载入 json2.jsx ");
 }
-function projectName(name) {
+// function projectName(name) {
 
-    var project = {};
+//     var project = {};
 
-    if (name === "sg2") {//三国2
-        project.img = "D:/Black8/sg2/svn/ui/upload/T图标/";
-        project.psd = "//版本公用计算机/美术资源共享文件夹1/天天幻灵美术/天天怼三国最终/lib/原始文件/";
-    }
-    if (name === "bjj") {//百将决
-        project.img = "D:/Black8/bjj/svn/ui/upload/T图标/";
-        project.psd = "//版本公用计算机/美术资源共享文件夹1/天天幻灵美术/百将诀/lib/原始文件/";
-    }
-    if (name === "72bian") {//百将决
-        project.img = "D:/Black8/72bian/svn/ui/upload/T图标/";
-        project.psd = "//版本公用计算机/美术资源共享文件夹1/天天幻灵美术/72变/lib/原始文件/";
-    }
-    return project;
+//     if (name === "sg2") {//三国2
+//         project.img = "D:/Black8/sg2/svn/ui/upload/T图标/";
+//         project.psd = "//版本公用计算机/美术资源共享文件夹1/天天幻灵美术/天天怼三国最终/lib/原始文件/";
+//     }
+//     if (name === "bjj") {//百将决
+//         project.img = "D:/Black8/bjj/svn/ui/upload/T图标/";
+//         project.psd = "//版本公用计算机/美术资源共享文件夹1/天天幻灵美术/百将诀/lib/原始文件/";
+//     }
+//     if (name === "72bian") {//百将决
+//         project.img = "D:/Black8/72bian/svn/ui/upload/T图标/";
+//         project.psd = "//版本公用计算机/美术资源共享文件夹1/天天幻灵美术/72变/lib/原始文件/";
+//     }
+//     return project;
 
-}
+// }
 
 function main(excelFile, projectData) {
 

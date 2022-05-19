@@ -23,6 +23,7 @@ var outputTextJs = function () {
     //assetsName = "assetsText";
     //assetsName = txt_assets.value;
     //sheetName = txt_sheet.value;
+    //alert("3  " + nameTypeVal);
     cs.evalScript("outputText('" + pat + "','" + nameTypeVal + "','" + in_extendPath + "')");
     //cs.evalScript("isEnd('" + obj_01 + "')");
     //cs.evalScript("outputText('" + nameTypeVal + "','" + in_extendPath + "')");
