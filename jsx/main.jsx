@@ -53,12 +53,12 @@ var obj_01 = {};
 obj_01.isEnd = false;
 
 var outputText = function (jsonFile, nameTypeVal, in_extendPath) {
-    
+    // alert("00");
     $.evalFile(in_extendPath + "/jsx/lib/json2.jsx");
     $.evalFile(in_extendPath + "/jsx/lib/kersBoru_lib.jsx");
     $.evalFile(in_extendPath + "/jsx/black8_Icon.jsx");
     //$.global.mainL=main; 
-    //alert("1");
+
     try {
         JSON
         //alert("131");
@@ -66,12 +66,12 @@ var outputText = function (jsonFile, nameTypeVal, in_extendPath) {
         $.writeln("1因为未载入 JSON 解析库，请载入 json2.jsx ");
     }
 
-    //alert("12");
+    //alert("1");
     var projectData = projectName(nameTypeVal);
     //var pat_img = projectName_.img;//后续需要改成配置的
     //alert("2s");
     var jsonFile = new File(jsonFile);
-    //alert("1111  " + nameTypeVal);
+
     main(jsonFile, projectData);
 
     //parseFile(pat, assetsName,sheetName, typeVal);
@@ -87,22 +87,16 @@ function projectName(name) {
         project.img = "D:/Black8/sg2/svn/ui/upload/T图标/";
         project.psd = "//版本公用计算机/美术资源共享文件夹1/天天幻灵美术/天天怼三国最终/lib/原始文件/";
     }
-    if (name === "bjj_tw") {//百将决-繁
+    if (name === "bjj") {//百将决
         project.img = "D:/Black8/bjj/svn/ui/upload/T图标/";
-        project.psd = "//版本公用计算机/美术资源共享文件夹1/天天幻灵美术/百将诀/lib/原始文件/";
-    }
-    if (name === "bjj_cn") {//百将决-简
-        //alert("cn");
-        project.img = "D:/Black8/bjj_cn/svn/ui/upload/T图标/";
         project.psd = "//版本公用计算机/美术资源共享文件夹1/天天幻灵美术/百将诀/lib/原始文件/";
     }
     if (name === "72bian") {//百将决
         project.img = "D:/Black8/72bian/svn/ui/upload/T图标/";
         project.psd = "//版本公用计算机/美术资源共享文件夹1/天天幻灵美术/72变/lib/原始文件/";
-
-
+        
+        
     }
     return project;
 
 }
-//outputText();
